@@ -1,3 +1,3 @@
 # TicTacToe
 
-Game - Tic Tac Toeад
+Game - Tic Tac Toe
