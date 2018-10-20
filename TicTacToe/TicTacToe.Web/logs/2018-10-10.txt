@@ -1,0 +1,337 @@
+10.10.2018г. 12:49:09.131
+----- Message: -----
+Npgsql.PostgresException (0x80004005): 42703: column u.isactivatedwithurl does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1003
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 467
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 340
+   at Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1231
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at TicTacToe.PostgreSqlData.Utilities.Reader.SqlReader.Read[T](DbCommand command) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Reader\SqlReader.cs:line 15
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 16
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.GetUser(Guid userid) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 30
+   at TicTacToe.Services.Services.UserService.GetUser(Guid id) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 22
+   at TicTacToe.Controllers.User.ManageUserController.EditUser(Nullable`1 id) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\ManageUserController.cs:line 88
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 14:12:07.908
+----- Message: -----
+System.InvalidOperationException: The partial view 'FindResult' was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Role/FindResult.aspx
+~/Views/Role/FindResult.ascx
+~/Views/Shared/FindResult.aspx
+~/Views/Shared/FindResult.ascx
+~/Views/Role/FindResult.cshtml
+~/Views/Role/FindResult.vbhtml
+~/Views/Shared/FindResult.cshtml
+~/Views/Shared/FindResult.vbhtml
+   at System.Web.Mvc.PartialViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 17:54:39.929
+----- Message: -----
+System.InvalidOperationException: The pattern must be set to a valid regular expression.
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.SetupRegex()
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(Object value)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(Object value, ValidationContext validationContext)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(Object value, ValidationContext validationContext)
+   at System.Web.Mvc.DataAnnotationsModelValidator.Validate(Object container)
+   at System.Web.Mvc.ModelValidator.CompositeModelValidator.<Validate>d__2.MoveNext()
+   at System.Web.Mvc.DefaultModelBinder.OnModelUpdated(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexElementalModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Object model)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 18:01:49.577
+----- Message: -----
+System.InvalidOperationException: The pattern must be set to a valid regular expression.
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.SetupRegex()
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(Object value)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(Object value, ValidationContext validationContext)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(Object value, ValidationContext validationContext)
+   at System.Web.Mvc.DataAnnotationsModelValidator.Validate(Object container)
+   at System.Web.Mvc.ModelValidator.CompositeModelValidator.<Validate>d__2.MoveNext()
+   at System.Web.Mvc.DefaultModelBinder.OnModelUpdated(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexElementalModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Object model)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 18:03:52.681
+----- Message: -----
+System.InvalidOperationException: The pattern must be set to a valid regular expression.
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.SetupRegex()
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(Object value)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(Object value, ValidationContext validationContext)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(Object value, ValidationContext validationContext)
+   at System.Web.Mvc.DataAnnotationsModelValidator.Validate(Object container)
+   at System.Web.Mvc.ModelValidator.CompositeModelValidator.<Validate>d__2.MoveNext()
+   at System.Web.Mvc.DefaultModelBinder.OnModelUpdated(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexElementalModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Object model)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 18:05:10.166
+----- Message: -----
+System.InvalidOperationException: The pattern must be set to a valid regular expression.
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.SetupRegex()
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(Object value)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(Object value, ValidationContext validationContext)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(Object value, ValidationContext validationContext)
+   at System.Web.Mvc.DataAnnotationsModelValidator.Validate(Object container)
+   at System.Web.Mvc.ModelValidator.CompositeModelValidator.<Validate>d__2.MoveNext()
+   at System.Web.Mvc.DefaultModelBinder.OnModelUpdated(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexElementalModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Object model)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 18:06:22.832
+----- Message: -----
+System.InvalidOperationException: The pattern must be set to a valid regular expression.
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.SetupRegex()
+   at System.ComponentModel.DataAnnotations.RegularExpressionAttribute.IsValid(Object value)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.IsValid(Object value, ValidationContext validationContext)
+   at System.ComponentModel.DataAnnotations.ValidationAttribute.GetValidationResult(Object value, ValidationContext validationContext)
+   at System.Web.Mvc.DataAnnotationsModelValidator.Validate(Object container)
+   at System.Web.Mvc.ModelValidator.CompositeModelValidator.<Validate>d__2.MoveNext()
+   at System.Web.Mvc.DefaultModelBinder.OnModelUpdated(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexElementalModel(ControllerContext controllerContext, ModelBindingContext bindingContext, Object model)
+   at System.Web.Mvc.DefaultModelBinder.BindComplexModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.DefaultModelBinder.BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValue(ControllerContext controllerContext, ParameterDescriptor parameterDescriptor)
+   at System.Web.Mvc.ControllerActionInvoker.GetParameterValues(ControllerContext controllerContext, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__0(AsyncCallback asyncCallback, Object asyncState)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 18:38:59.581
+----- Message: -----
+System.InvalidOperationException: The view 'LogOn' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Home/LogOn.aspx
+~/Views/Home/LogOn.ascx
+~/Views/Shared/LogOn.aspx
+~/Views/Shared/LogOn.ascx
+~/Views/Home/Account.master
+~/Views/Shared/Account.master
+~/Views/Home/LogOn.cshtml
+~/Views/Home/LogOn.vbhtml
+~/Views/Shared/LogOn.cshtml
+~/Views/Shared/LogOn.vbhtml
+~/Views/Home/Account.cshtml
+~/Views/Home/Account.vbhtml
+~/Views/Shared/Account.cshtml
+~/Views/Shared/Account.vbhtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 18:59:14.811
+----- Message: -----
+System.InvalidOperationException: The view 'LogIn' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Home/LogIn.aspx
+~/Views/Home/LogIn.ascx
+~/Views/Shared/LogIn.aspx
+~/Views/Shared/LogIn.ascx
+~/Views/Home/Account.master
+~/Views/Shared/Account.master
+~/Views/Home/LogIn.cshtml
+~/Views/Home/LogIn.vbhtml
+~/Views/Shared/LogIn.cshtml
+~/Views/Shared/LogIn.vbhtml
+~/Views/Home/Account.cshtml
+~/Views/Home/Account.vbhtml
+~/Views/Shared/Account.cshtml
+~/Views/Shared/Account.vbhtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+10.10.2018г. 19:27:07.393
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:27:07.439
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:32:54.962
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:32:54.987
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:33:12.266
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:33:12.266
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:33:23.675
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:33:23.675
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:33:31.668
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:33:31.668
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:33:32.570
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:33:32.577
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:33:32.837
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:33:32.837
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:33:33.020
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:33:33.026
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+10.10.2018г. 19:36:03.241
+----- Message: -----
+Неуспешен вход за потребител demo
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+10.10.2018г. 19:36:03.241
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+

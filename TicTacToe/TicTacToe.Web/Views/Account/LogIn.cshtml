@@ -1,0 +1,45 @@
+﻿@model TicTacToe.Models.ViewModels.LogInViewModel
+
+@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Вход</title>
+    <script>
+        var SiteBase = '@VirtualPathUtility.ToAbsolute("~/")';
+    </script>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Login.css" rel="stylesheet" />
+</head>
+
+<body class="text-center">
+    @using (Html.BeginForm("LogIn", "Account", FormMethod.Post, new { @class = "form-signin" }))
+    {
+        @Html.Hidden("returnUrl", (object)ViewBag.ReturnUrl)
+        <img class="mb-4" src="~/Content/Images/tic-tac-toe-game-icon-256.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Вход</h1>
+        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @placeholder = "Потребителско име", @autofocus = "" })
+        @Html.ValidationMessageFor(m => m.Username)
+
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Парола" })
+        @Html.ValidationMessageFor(m => m.Password)
+
+        <div class="custom-control custom-checkbox mb-3">
+            @Html.CheckBoxFor(m => m.RememberMe, new { @id = "customCheck", @name = "remember", @class = "custom-control-input" })
+            <label class="custom-control-label" for="customCheck">Запомни ме</label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Вход</button>
+        <p class="mt-5 mb-3 text-muted">© Tic Tac Toe @DateTime.Now.Year</p>
+    }
+</body>
+
+</html>

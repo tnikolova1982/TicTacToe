@@ -1,0 +1,14 @@
+﻿@model string
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Грешка</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Грешка.</h1>
+        <h2>@Html.Raw(Model ?? "Непозната грешка"). За да се върнете на началната страница натиснете <a href="@Url.Action("Index", "Home")">ТУК.</a></h2>
+    </hgroup>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿@using System.ComponentModel
+@using System.Reflection
+@using TicTacToe.Infrastructure.Filters.CustomAttributes
+@using TicTacToe.Infrastructure.Reflection
+@model TicTacToe.Models.User.UserQueryModel
+
+
+@section scripts{
+    <script src="~/Scripts/Controllers/User.js"></script>
+}
+
+@using (Ajax.BeginForm("FindResult", "User", new AjaxOptions
+{
+    HttpMethod = "GET",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "resultTable",
+    OnSuccess = "User.InitTable"
+}, new { id = "SearchForm" }))
+{
+
+    <legend>Потребители</legend>
+    <div>
+        @foreach (var item in ReflectionUtils.GetPropertyInfoCache(Model.GetType()))
+        {
+            var attr = item.GetCustomAttribute(typeof(QueryAttribute), false);
+            if ((attr == null || ((QueryAttribute)attr).IsVisibleInView) && item.PropertyType != typeof(Guid?))
+            {
+                <div class="col-lg-4 col-md-8 inline">
+                    <div class="form-group">
+                        @{
+                            var label = item.GetCustomAttribute<DisplayNameAttribute>();
+                        }
+
+                        @Html.Label(label != null && label.DisplayName != null ? label.DisplayName : item.Name)
+                        @if (item.PropertyType == typeof(string))
+                        {
+                            @Html.TextBox(item.Name, item.GetValue(Model), new { @class = "form-control" })
+                        }
+                        else if (item.PropertyType == typeof(IEnumerable<KeyValuePair<string, string>>))
+                        {
+                            var selectedOption = Model.GetType().GetProperties().FirstOrDefault(i => i.Name == item.Name.Replace("DropDown", string.Empty));
+                            <select name="@item.Name.Replace("DropDown", string.Empty)" class="dropdown form-control" @(Model.RoleIdDropDown.Any(x => x.Value.ToString() == Guid.Empty.ToString()) ? "disabled = \"disabled\"" : "")>
+                                <option>---Всички---</option>
+                                @foreach (var option in Model.RoleIdDropDown)
+                                {
+                                    <option value="@option.Value" @(Model.RoleId != null ? selectedOption != null && (selectedOption.GetValue(Model).ToString() == option.Value) ? "selected=selected" : string.Empty : string.Empty)>
+                                        @option.Key
+                                    </option>
+                                }
+                            </select>
+                        }
+                        else if (item.PropertyType.IsGenericType)
+                        {
+                            @Html.TextBox(item.Name, item.GetValue(Model), new { @class = "form-control" })
+                        }
+                    </div>
+                </div>
+            }
+        }
+
+        <div class="buttonDiv pull-right">
+            <button type="submit" class="btn btn-default btn-lg btneq"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <button type="button" class="btn btn-default btn-lg btneq add-new-user-js" title="Създай потребител"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div id="resultTable"></div>
+}

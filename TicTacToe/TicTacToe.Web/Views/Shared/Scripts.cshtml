@@ -1,0 +1,32 @@
+﻿@using TicTacToe.Models.Game
+@{
+    Layout = null;
+}
+
+<script type="text/javascript">
+    var Site = {};
+
+    Site.getSiteBase = function () {
+        var base = '@VirtualPathUtility.ToAbsolute("~/")';
+        return base;
+    };
+
+    Site.getPathToActionMethod = function(action, controller) {
+        var base = Site.getSiteBase();
+        var path = base + controller + "/" + action + "/";
+
+        return path;
+    };
+
+    Site.DefaultGuid = function() {
+        return "00000000-0000-0000-0000-000000000000";
+    }
+
+    Site.GetGameLatterX = function () {
+        return "@GameLetters.X"
+    }
+
+    Site.GetGameLatterO = function () {
+        return "@GameLetters.O"
+    }
+</script>

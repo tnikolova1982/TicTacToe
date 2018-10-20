@@ -1,0 +1,89 @@
+﻿@using TicTacToe.Models.ViewModels
+@using TicTacToe.Models.Role
+@using TicTacToe.Infrastructure.Random
+@using TicTacToe.Infrastructure.Extensions
+
+@model  RoleViewModel
+
+@{
+    var allActivities = ViewBag.AllActivities as List<Activity>;
+}
+
+@section scripts{
+    <script src="~/Scripts/Controllers/ManageRole.js"></script>
+}
+
+@using (Html.BeginForm("Upsert", "ManageRole", FormMethod.Post, new { id = "UpsertRole" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(m => m.Id)
+
+    <fieldset>
+        <legend>@(Model.IsNew() ? "Създаване на роля" : "Редакция на роля")</legend>
+
+        <div class="form-group col-md-6">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Права</legend>
+        @Html.ValidationMessageFor(m => m.ActivitiesIds)
+        <table id="RoleActivitiesTable" class="table table-bordered" name="activities">
+            <thead>
+                <tr>
+                    <th scope="col" class="check-box-header">
+                        <div class="checkbox">
+                            <label class="bigger-check-box">
+                                <input type="checkbox" class="select-all-checkboxes-js" value="">
+                                <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                            </label>
+                        </div>
+                    </th>
+                    <th scope="col" class="col-1">
+                        Име
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (allActivities != null)
+                {
+                    foreach (var activity in allActivities)
+                    {
+                        string index = RandomGenerator.Generate();
+                        <tr>
+                            <td>
+                                @Html.Hidden("ActivitiesIds.Index", index)
+                                <div class="checkbox">
+                                    <label class="bigger-check-box">
+                                        <input type="checkbox" name=@string.Format("ActivitiesIds[{0}]", index) class="" value=@activity.Id @(Model != null && Model.ActivitiesIds.IsNotNullOrEmpty() && Model.ActivitiesIds.Any(item => item == activity.Id) ? "checked='checked'" : string.Empty)>
+                                        <span class="cr"><i class="cr-icon fa fa-check"></i></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td>@activity.Name</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="2"> Няма резултати от търсенето!</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </fieldset>
+
+    <div id="appendInputsForSubmit">
+
+    </div>
+
+    <div class="pull-right">
+        <button id="role-btn-submit" type="submit" class="btn btn-primary">Запис</button>
+        <a href="@Url.Action("Index", "Role")" class="btn btn-secondary">Изход</a>
+    </div>
+}

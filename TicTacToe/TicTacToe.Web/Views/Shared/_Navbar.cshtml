@@ -1,0 +1,42 @@
+﻿@using TicTacToe.Roles
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary flex-column flex-md-row bd-navbar">
+    <a class="navbar-brand" href="#">Tic Tac Toe</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "GameTicTacToe")"> <i class="fas fa-gamepad"></i> Морски Шах <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarAdminDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-users-cog"></i>
+                    Административен панел
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="@Url.Action("Index", "User")"> <i class="fas fa-users"></i> Потребители</a>
+                    <a class="dropdown-item" href="@Url.Action("Index", "Role")"><i class="far fa-address-card"></i> Роли</a>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="navbar-collapse collapse d-flex justify-content-md-end justify-content-lg-end">
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown dropleft hidden-sm logOutDropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="logOutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @User.Identity.Name
+                </a>
+                <div class="dropdown-menu" aria-labelledby="logOutDropdown">
+                    <a class="dropdown-item logOutNavLink" href="@Url.Action("LogOff", "Account")">Изход</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

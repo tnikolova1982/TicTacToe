@@ -1,0 +1,1272 @@
+09.10.2018ã. 08:35:20.993
+----- Message: -----
+System.IO.FileNotFoundException: Could not load file or assembly 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' ---> System.IO.FileNotFoundException: Could not load file or assembly 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a' or one of its dependencies. The system cannot find the file specified.
+File name: 'System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
+
+WRN: Assembly binding logging is turned OFF.
+To enable assembly bind failure logging, set the registry value [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD) to 1.
+Note: There is some performance penalty associated with assembly bind failure logging.
+To turn this feature off, remove the registry value [HKLM\Software\Microsoft\Fusion!EnableLog].
+
+   at Npgsql.NpgsqlWriteBuffer.Write[T](T value)
+   at Npgsql.NpgsqlWriteBuffer.WriteInt32(Int32 value, Boolean littleEndian) in C:\projects\npgsql\src\Npgsql\NpgsqlWriteBuffer.cs:line 238
+   at Npgsql.FrontendMessages.StartupMessage.WriteFully(NpgsqlWriteBuffer buf) in C:\projects\npgsql\src\Npgsql\FrontendMessages\StartupMessage.cs:line 60
+   at Npgsql.NpgsqlConnector.WriteStartupMessage(String username) in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 503
+   at Npgsql.NpgsqlConnector.<Open>d__149.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 455
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlConnection.<>c__DisplayClass32_0.<<Open>g__OpenLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnection.cs:line 331
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlConnection.Open() in C:\projects\npgsql\src\Npgsql\NpgsqlConnection.cs:line 153
+   at TicTacToe.PostgreSqlData.Context.Transaction..ctor(Context context) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Context\Transaction.cs:line 20
+   at TicTacToe.PostgreSqlData.Context.ContextManager.NewTransaction() in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Context\ContextManager.cs:line 16
+   at TicTacToe.Controllers.User.UserController.PrepareInitialQuery(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 63
+   at TicTacToe.Controllers.User.UserController.Index(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 29
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+
+
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 08:48:47.701
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 08:53:44.749
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 08:55:55.875
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 08:57:01.123
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 08:57:34.374
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:01:40.884
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:02:33.727
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:03:02.432
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:04:27.859
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:04:34.544
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:05:08.464
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:06:45.531
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:07:06.610
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:07:39.677
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:17:29.880
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:19:57.609
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:21:52.159
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:24:29.953
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:45:41.734
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 09:48:24.503
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 10:07:11.326
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.CommandGeneratorConnectionExtension.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\CommandGeneratorConnectionExtension.cs:line 10
+   at TicTacToe.PostgreSqlData.Utilities.Reader.SqlReader.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Reader\SqlReader.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 13:31:38.574
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 13:31:45.811
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:05:42.784
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:05:52.120
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:21:10.787
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:37:29.513
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:37:57.883
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:45:07.284
+----- Message: -----
+System.InvalidOperationException: No row is available
+   at Npgsql.NpgsqlDefaultDataReader.GetValue(Int32 ordinal) in C:\projects\npgsql\src\Npgsql\NpgsqlDefaultDataReader.cs:line 170
+   at TicTacToe.PostgreSqlData.Utilities.Reader.SqlReader.Read[T](DbCommand command) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Reader\SqlReader.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.Query.TextQueryExtension.QueryText[T](DbConnection cnn, String sql) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\TextQueryExtension.cs:line 17
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.CommandGenerator.GetProcedureParams(DbConnection cnn, String name) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\CommandGenerator.cs:line 22
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GetOrInsertCommandCacheInfo(DbConnection cnn, String commandText, Type objType) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 171
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 22
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:47:31.044
+----- Message: -----
+Npgsql.PostgresException (0x80004005): 42883: function admdata.search_user() does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1003
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 444
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 340
+   at Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1231
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at TicTacToe.PostgreSqlData.Utilities.Reader.SqlReader.Read[T](DbCommand command) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Reader\SqlReader.cs:line 15
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 16
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:47:43.141
+----- Message: -----
+Npgsql.PostgresException (0x80004005): 42883: function admdata.search_user() does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1003
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 444
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 340
+   at Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1231
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at TicTacToe.PostgreSqlData.Utilities.Reader.SqlReader.Read[T](DbCommand command) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Reader\SqlReader.cs:line 15
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 16
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:49:20.467
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:49:24.559
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:50:40.576
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 19:51:13.520
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.FillCommandWithParameters(DbCommand dbCommand, CacheInfo info, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 35
+   at TicTacToe.PostgreSqlData.Utilities.DynamicCommand.Parameters.AbstractCommandGenerator`1.GenerateCommand(DbConnection cnn, String commandText, Object obj, DbParameter[] additionalParameters) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\DynamicCommand\Parameters\AbstractCommandGenerator.cs:line 24
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 14
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 20:01:45.504
+----- Message: -----
+Npgsql.PostgresException (0x80004005): 42883: function admdata.search_user() does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1003
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 444
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 340
+   at Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1231
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at TicTacToe.PostgreSqlData.Utilities.Reader.SqlReader.Read[T](DbCommand command) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Reader\SqlReader.cs:line 15
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 16
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+
+09.10.2018ã. 20:09:28.966
+----- Message: -----
+Npgsql.PostgresException (0x80004005): 42703: column u.isactivatedwithurl does not exist
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1003
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at Npgsql.NpgsqlConnector.<>c__DisplayClass161_0.<<ReadMessage>g__ReadMessageLong|0>d.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlConnector.cs:line 1032
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Npgsql.NpgsqlDataReader.<NextResult>d__46.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 467
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlDataReader.NextResult() in C:\projects\npgsql\src\Npgsql\NpgsqlDataReader.cs:line 340
+   at Npgsql.NpgsqlCommand.<ExecuteDbDataReader>d__100.MoveNext() in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1231
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior) in C:\projects\npgsql\src\Npgsql\NpgsqlCommand.cs:line 1130
+   at System.Data.Common.DbCommand.ExecuteReader()
+   at TicTacToe.PostgreSqlData.Utilities.Reader.SqlReader.Read[T](DbCommand command) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Reader\SqlReader.cs:line 15
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQuery.Query[T,TProcedureParameters](DbConnection cnn, AbstractCommandGenerator`1 commandGenerator, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQuery.cs:line 16
+   at TicTacToe.PostgreSqlData.Utilities.Query.CommandQueryExtension.Query[T](DbConnection cnn, String commandText, Object obj) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Utilities\Query\CommandQueryExtension.cs:line 14
+   at TicTacToe.PostgreSqlData.Repositories.UserRepository.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.PostgreSqlData\Repositories\UserRepository.cs:line 25
+   at TicTacToe.Services.Services.UserService.SearchUsers(UserQueryModel query) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\UserService.cs:line 27
+   at TicTacToe.Controllers.User.UserController.CountResults(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 53
+   at TicTacToe.Services.Services.SearchTableService.Search[TQuery,TTable](TQuery model, ISearchable`2 searchable) in D:\TicTacToe\TicTacToe\TicTacToe.Services\Services\SearchTableService.cs:line 14
+   at TicTacToe.Controllers.User.UserController.FindResult(UserQueryModel model) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\User\UserController.cs:line 36
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c.<BeginInvokeSynchronousActionMethod>b__9_0(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__11_0()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass11_1.<InvokeActionMethodFilterAsynchronouslyRecursive>b__2()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass7_0.<BeginInvokeActionMethodWithFilters>b__1(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_6.<BeginInvokeAction>b__3()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass3_1.<BeginInvokeAction>b__5(IAsyncResult asyncResult)
+----- StackTrace: -----
+Controller.System.Web.Mvc.IExceptionFilter.OnException => BaseController.OnException => NLogger.Error
+

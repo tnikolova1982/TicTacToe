@@ -1,0 +1,64 @@
+﻿@model TicTacToe.Models.ViewModels.CreateUserViewModel
+
+@using (Html.BeginForm("CreateUser", "ManageUser", FormMethod.Post, new { id = "UpsertUser" }))
+{
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(m => m.Id)
+
+    <fieldset>
+        <legend>Създаване на потребител</legend>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.FullName)
+                <span class="required"><i class="fa fa-asterisk"></i></span>
+                @Html.TextBoxFor(m => m.FullName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.FullName)
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.RoleId)
+                <span class="required"><i class="fa fa-asterisk"></i></span>
+                @Html.DropDownListFor(m => m.RoleId, (IEnumerable<SelectListItem>)ViewBag.UserRoles, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.RoleId)
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.UserName)
+                <span class="required"><i class="fa fa-asterisk"></i></span>
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.Password)
+                <span class="required"><i class="fa fa-asterisk"></i></span>
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+
+            <div class="form-group col-md-6">
+                @Html.LabelFor(m => m.ConfrimPassword)
+                <span class="required"><i class="fa fa-asterisk"></i></span>
+                @Html.PasswordFor(m => m.ConfrimPassword, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.ConfrimPassword)
+            </div>
+        </div>
+
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary">Запис</button>
+            <a href="@Url.Action("Index", "User")" class="btn btn-secondary">Изход</a>
+        </div>
+    </fieldset>
+}

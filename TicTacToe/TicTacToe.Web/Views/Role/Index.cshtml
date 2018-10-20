@@ -1,0 +1,69 @@
+﻿@using System.ComponentModel
+@using System.Reflection
+@using TicTacToe.Infrastructure.Filters.CustomAttributes
+@using TicTacToe.Infrastructure.Reflection
+@using TicTacToe.Roles
+@model TicTacToe.Models.Role.RoleQueryModel
+
+@section scripts{
+    <script src="~/Scripts/Controllers/Role.js"></script>
+}
+
+@using (Ajax.BeginForm("FindResult", "Role", new AjaxOptions
+{
+    HttpMethod = "GET",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "resultTable",
+    OnSuccess = "Role.InitTable"
+}, new { id = "SearchForm" }))
+{
+
+    <legend>Роли</legend>
+    <div>
+        @foreach (var item in ReflectionUtils.GetPropertyInfoCache(Model.GetType()))
+        {
+            var attr = item.GetCustomAttribute(typeof(QueryAttribute), false);
+            if (attr == null || ((QueryAttribute)attr).IsVisibleInView)
+            {
+                <div class="col-lg-4 col-md-8 inline">
+                    <div class="form-group">
+                        @{
+                            var label = item.GetCustomAttribute<DisplayNameAttribute>();
+                        }
+
+                        @Html.Label(label != null && label.DisplayName != null ? label.DisplayName : item.Name)
+                        @if (item.PropertyType == typeof(string))
+                        {
+                            @Html.TextBox(item.Name, item.GetValue(Model), new { @class = "form-control" })
+                        }
+                        else if (item.PropertyType == typeof(List<KeyValuePair<string, string>>))
+                        {
+                            var selectedOption = Model.GetType().GetProperties().FirstOrDefault(i => i.Name == item.Name.Replace("DropDown", string.Empty));
+                            <select name="@item.Name.Replace("DropDown", string.Empty)" class="dropdown">
+                                @foreach (var element in item.GetType().GetProperties())
+                                {
+                                    <option value="@element.GetValue(item)" @(selectedOption != null && (selectedOption.GetValue(Model) == element.GetValue(item)) ? "selected=selected" : string.Empty)>
+                                        @element.Name
+                                    </option>
+                                }
+                            </select>
+                        }
+                        else if (item.PropertyType.IsGenericType)
+                        {
+                            @Html.TextBox(item.Name, item.GetValue(Model), new { @class = "form-control" })
+                        }
+                    </div>
+                </div>
+            }
+        }
+
+        <div class="buttonDiv pull-right">
+            <button type="submit" class="btn btn-default btn-lg btneq"><i class="fa fa-search" aria-hidden="true"></i></button>
+            @*@if (User.IsInRole(UserRightConstants.CreateRole))
+                {*@
+            <button type="button" class="btn btn-default btn-lg btneq add-new-role-js" title="Създай роля"><i class="fa fa-plus"></i></button>
+        </div>
+    </div>
+
+    <div id="resultTable"></div>
+}

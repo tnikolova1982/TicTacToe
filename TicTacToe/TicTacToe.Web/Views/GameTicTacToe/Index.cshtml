@@ -1,0 +1,85 @@
+﻿@using TicTacToe.Models.Game
+@model TicTacToe.Models.Game.Game
+@{
+}
+
+@section scripts{
+    <script src="~/Scripts/Controllers/GameTicTacToe.js"></script>
+}
+
+
+@using (Ajax.BeginForm("GameResult", "GameTicTacToe", new AjaxOptions
+{
+    HttpMethod = "POST",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "Result",
+}, new { id = "TicTacToeGameForm" }))
+{
+    <div class="container mt-4">
+        <input type="hidden" name="userAction" id="submit-action" />
+        @Html.TextBoxFor(m => m.GameStatus.Id, new { @type = "hidden" })
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+            <div class="form-group col-4 col-sm-4 col-md-3 col-lg-3">
+                @Html.DropDownListFor(m => m.GameLevelId, (IEnumerable<SelectListItem>)ViewBag.GameLevels, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-4 col-sm-4 col-md-3 col-lg-3">
+                @Html.DropDownListFor(m => m.UserLetterId, (IEnumerable<SelectListItem>)ViewBag.GameLetters, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="row justify-content-center justify-content-sm-center justify-content-md-center justify-content-lg-center">
+            <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+                <button id="startFirstBtn" type="submit" value="startFirst" class="btn btn-outline-primary start-btn-js">Започни първи</button>
+            </div>
+            <div class="col-4 col-sm-4 col-md-3 col-lg-2">
+                <button id="startSecondBtn" type="submit" value="startSecond" class="btn btn-outline-primary start-btn-js">Започни втори</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="Result">
+        <div class="container mt-5">
+            @for (int index = 0; index < Model.Borad.GameBoard.Count; index += 3)
+            {
+                <div class="row justify-content-center mb-4">
+                    <div class="col-3 col-sm-3 col-md-2 col-lg-2">
+                        @Html.TextBoxFor(m => m.Borad.GameBoard[index].Value, new { @type = "hidden" })
+
+                        <button type="submit" value="userPlay" class="btn btn-light button-options-js" @(Model.Borad.GameBoard[index].IsEnabled ? null : "disabled='disabled'")>@Model.Borad.GameBoard[index].Value</button>
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-2 col-lg-2">
+                        @Html.TextBoxFor(m => m.Borad.GameBoard[index + 1].Value, new { @type = "hidden" })
+                        <button type="submit" value="userPlay" class="btn btn-light button-options-js" @(Model.Borad.GameBoard[index].IsEnabled ? null : "disabled='disabled'")>@Model.Borad.GameBoard[index + 1].Value</button>
+                    </div>
+                    <div class="col-3 col-sm-3 col-md-2 col-lg-2">
+                        @Html.TextBoxFor(m => m.Borad.GameBoard[index + 2].Value, new { @type = "hidden" })
+                        <button type="submit" value="userPlay" class="btn btn-light button-options-js" @(Model.Borad.GameBoard[index].IsEnabled ? null : "disabled='disabled'")>@Model.Borad.GameBoard[index + 2].Value</button>
+                    </div>
+                </div>
+            }
+
+            @if (Model.GameStatus.Id == GameStatus.Win)
+            {
+                <div class="row justify-content-center mt-5">
+                    <label>ВИЕ СПЕЧЕЛИХТЕ!</label>
+                </div>
+            }
+            else if (Model.GameStatus.Id == GameStatus.Lose)
+            {
+                <div class="row justify-content-center mt-5">
+                    <label>ВИЕ ЗАГУБИХТЕ!</label>
+                </div>
+            }
+            else if (Model.GameStatus.Id == GameStatus.Draw)
+            {
+                <div class="row justify-content-center mt-5">
+                    <label>РАВЕНСТВО!</label>
+                </div>
+            }
+
+        </div>
+    </div>
+}
+
+
+

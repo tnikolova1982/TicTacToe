@@ -1,0 +1,52 @@
+12.10.2018г. 16:52:17.725
+----- Message: -----
+Неуспешен вход за потребител bkirpiev
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+12.10.2018г. 16:52:17.767
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+12.10.2018г. 16:52:23.337
+----- Message: -----
+Неуспешен вход за потребител bkirpiev
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+12.10.2018г. 16:52:23.339
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+12.10.2018г. 16:52:30.471
+----- Message: -----
+Неуспешен вход за потребител bkirpiev
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+12.10.2018г. 16:52:30.471
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
+12.10.2018г. 17:11:46.177
+----- Message: -----
+Неуспешен вход за потребител boris
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Warning
+
+12.10.2018г. 17:11:46.211
+----- Message: -----
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at TicTacToe.Controllers.Account.AccountController.LogIn(LogInViewModel model, String returnUrl) in D:\TicTacToe\TicTacToe\TicTacToe\Controllers\Account\AccountController.cs:line 55
+----- StackTrace: -----
+<no type>.lambda_method => AccountController.LogIn => NLogger.Error
+
